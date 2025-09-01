@@ -5,5 +5,20 @@
     "ghcr.io/devcontainers/features/php:1": {
       "version": "8.3"
     }
-  }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "xdebug.php-debug",
+        "bmewburn.vscode-intelephense-client",
+        "mehedidracula.php-namespace-resolver"
+      ],
+      "settings": {
+        "php.validate.executablePath": "/usr/local/bin/php"
+      }
+    }
+  },
+  "forwardPorts": [8000, 9003],
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "vscode"
 }
